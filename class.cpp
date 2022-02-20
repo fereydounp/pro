@@ -1,23 +1,23 @@
 #include <iostream>
 #include <string>
 using namespace std ;
-class car {
-    private :
-        int yearm ;
-        int price ;
-        string owner_name ;
+template <typename T >
+class number {
+    T num ;
     public :
-        car(int y, int p , string n ):yearm(y),price(p),owner_name(n){};
-        void show_info();
+        number(T n) : num(n) {};
+        void show ();
 };
-void car :: show_info(){
-    std :: cout << "the information of your car is : " << endl ;
-    cout << "year is : " << yearm << "\n";
-    cout << "the price of your car is : " << price << " $ \n " ;
-    cout << "the owner name is : " << owner_name << "\n" ;
+template <typename T >
+void number <T> :: show (){
+    cout << "the number is " << num << endl ;
 };
+
+
 int main (){
-    car parsa(1998,2800,"parsa veji") ;
-    parsa.show_info();
+    number <int> numberrrr (6);
+    number <float> floatn (5.4f);
+    numberrrr.show();
+    floatn.show();
     return 0 ;
 }
